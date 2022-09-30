@@ -1,6 +1,7 @@
 package controller;
 import model.Customer;
 import service.CustomerService;
+import service.CustomerServiceDB;
 import service.CustomerServiceImpl;
 
 import javax.servlet.RequestDispatcher;
@@ -14,7 +15,7 @@ import java.util.List;
 
 @WebServlet(name = "CustomerServlet",urlPatterns = "/customers")
 public class CustomerServlet extends HttpServlet {
-    private final CustomerService customerService = new CustomerServiceImpl();
+    private final CustomerService customerService = new CustomerServiceDB();
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
